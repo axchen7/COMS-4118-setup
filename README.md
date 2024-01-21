@@ -3,3 +3,5 @@
 This repository contains a `setup.sh` script that brings a fresh Debian 11 installation up to speed for COMS 4118: Operating Systems.
 
 Run `su -` to become root, then run `./setup.sh`.
+
+Note: to clone this repo into the the Debian VM, you may need to first run `apt install git` to install git. Then, run `git clone https://github.com/axchen7/COMS-4118-setup`.
