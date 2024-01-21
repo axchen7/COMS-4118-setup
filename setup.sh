@@ -13,8 +13,9 @@ echo "deb http://deb.debian.org/debian/ bullseye-backports main" >> /etc/apt/sou
 apt update
 apt upgrade
 apt install -y sudo git build-essential net-tools linux-headers-$(uname -r)
-apt install -y vim
-apt install -y open-vm-tools
+apt install -y vim open-vm-tools
+# use avahi-daemon to broadcast hostname
+apt install -y avahi-daemon
 
 # add user to sudo group
 echo "axchen7 ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
