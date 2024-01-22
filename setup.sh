@@ -43,3 +43,5 @@ mkdir -p /mnt/hgfs
 echo ".host:/ /mnt/hgfs fuse.vmhgfs-fuse allow_other 0 0" >> /etc/fstab
 mount -a
 
+# reboot to complete kedr install
+reboot
