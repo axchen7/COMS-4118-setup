@@ -13,9 +13,19 @@ echo "deb http://deb.debian.org/debian/ bullseye-backports main" >> /etc/apt/sou
 apt update
 apt upgrade
 apt install -y sudo git build-essential net-tools linux-headers-$(uname -r)
-apt install -y vim open-vm-tools
+apt install -y vim open-vm-tools cmake
 # use avahi-daemon to broadcast hostname
 apt install -y avahi-daemon
+
+# install kedr
+cd ~
+git clone https://github.com/cs4118/kedr
+cd kedr/sources
+mkdir build
+cd build
+cmake ..
+make -j$(nproc)
+make install
 
 # add user to sudo group
 echo "axchen7 ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
