@@ -17,16 +17,6 @@ apt install -y vim open-vm-tools cmake
 # use avahi-daemon to broadcast hostname
 apt install -y avahi-daemon
 
-# install kedr
-cd ~
-git clone https://github.com/cs4118/kedr
-cd kedr/sources
-mkdir build
-cd build
-cmake ..
-make -j$(nproc)
-make install
-
 # add user to sudo group
 echo "axchen7 ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
@@ -42,6 +32,16 @@ sudo -u axchen7 git config --global user.email "azc2110@columbia.edu"
 mkdir -p /mnt/hgfs
 echo ".host:/ /mnt/hgfs fuse.vmhgfs-fuse allow_other 0 0" >> /etc/fstab
 mount -a
+
+# install kedr
+cd ~
+git clone https://github.com/cs4118/kedr
+cd kedr/sources
+mkdir build
+cd build
+cmake ..
+make -j$(nproc)
+make install
 
 # reboot to complete kedr install
 reboot
