@@ -35,6 +35,7 @@ mkdir -p /home/axchen7/.ssh
 echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOA5UHYRNLtR1n2llKMR9Dp8/ywG2FQk7Eu0R4oOAt3v axchen7@outlook.com" > /home/axchen7/.ssh/authorized_keys
 
 # edit git global config for axchen7
+cd /home/axchen7
 sudo -u axchen7 git config --global user.name "Alex Chen"
 sudo -u axchen7 git config --global user.email "azc2110@columbia.edu"
 
