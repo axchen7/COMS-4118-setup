@@ -10,8 +10,10 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-# add bullseye-backports source (for open-vm-tools arm64 on Debian 11)
-echo "deb http://deb.debian.org/debian/ bullseye-backports main" >> /etc/apt/sources.list
+# if on arm64, must add bullseye-backports source (for open-vm-tools on Debian 11)
+if [[ $(uname -m) == "aarch64" ]]; then
+    echo "deb http://deb.debian.org/debian/ bullseye-backports main" >> /etc/apt/sources.list
+fi
 
 # install packages
 apt update
