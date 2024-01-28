@@ -1,8 +1,11 @@
 #!/bin/bash
 
-USERNAME="axchen7"
+# change these as needed
 GIT_NAME="Alex Chen"
 GIT_EMAIL="azc2110@columbia.edu"
+
+# determine username based on the single directory in /home
+USERNAME=$(ls -1 /home)
 
 # Check if running as root
 if [[ $EUID -ne 0 ]]; then
