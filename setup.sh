@@ -50,7 +50,7 @@ echo ".host:/ /mnt/hgfs fuse.vmhgfs-fuse allow_other 0 0" >> /etc/fstab
 mount -a
 
 # copy contents of /mnt/hgfs/.ssh to ~/.ssh
-cp -r /mnt/hgfs/.ssh /home/$USERNAME/.ssh
+sudo -u $USERNAME cp -r /mnt/hgfs/.ssh /home/$USERNAME/.ssh
 
 # reboot to complete kedr install
 reboot
